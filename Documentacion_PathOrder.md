@@ -444,6 +444,28 @@ A continuación, se describen las principales restricciones de negocio identific
 | Actualización de precio de un producto | ≤ 1 segundo | X | |
 | Actualización del inventario | ≤ 1 segundo | X | |
 
+---
+
+# **6. MER**
 
 ---
+
+# **7. Modelo de Clase**
+
+---
+
+# **8. Modelo de Objetos**
+
+---
+
+# **9. Modelo de Estados**
+
+
+---
+
+# **10. Modelo de Actividades**
+
+---
+
+
 
