@@ -210,7 +210,7 @@ El diagrama de paquetes describe la organización interna tanto del Backend como
 
 ## **3.3 Imagen del Diagrama de Paquetes — Backend**
 
-![Diagrama de Paquetes — Backend](DiagramaPaquetesBackend.png)
+![Diagrama de Paquetes — Backend](<sf2-Diagrama de paquetes back end.drawio.png>)
 
 ---
 
@@ -232,7 +232,7 @@ El diagrama de paquetes describe la organización interna tanto del Backend como
 
 ## **3.5 Imagen del Diagrama de Paquetes — Frontend**
 
-![Diagrama de Paquetes - Frontend](DiagramaPaquetesFrontend.png)
+![Diagrama de Paquetes - Frontend](<sf2-Diagrama de paquetes front.drawio.png>)
 
 ---
 
