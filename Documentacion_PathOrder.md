@@ -110,7 +110,7 @@ Cada componente encapsula una responsabilidad específica, facilitando la manten
 | **PathOrder (Backend)** | Núcleo funcional que expone servicios REST para reservas, pedidos y administración. | Centraliza la lógica del dominio y permite la comunicación con el resto de servicios. | Spring Boot 3.7, Java 21, PostgreSQL, Redis, Key Vault, API Gateway | **Componente a Desarrollar (Core)** |
 | **Spring Boot 3.7** | Framework para el desarrollo del backend. | Facilita configuración, modularidad y despliegue. | Java 21 | Framework / Acelerador |
 | **Java 21** | Plataforma base del backend. | LTS, rendimiento y estabilidad. | - | Plataforma Base |
-| **PostgreSQL JDBC + Spring Data JPA** | Manejo de persistencia mediante repositorios declarativos. | Reduce complejidad y estandariza el acceso a la BD. | PostgreSQL | Framework / Conector |
+| **PostgreSQL JDBC + Spring Data JPA** | Manejo de persistencia mediante repositorios declarativos. | Reduce complejidad y estandariza el acceso a la BD. | PostgreSQL | Librería / Conector |
 | **Spring Cache + Spring Data Redis** | Cache distribuida para datos consultados frecuentemente. | Mejora tiempos de respuesta y reduce carga de BD. | Redis Server | Framework / Acelerador |
 | **Spring Security + OAuth2 Resource Server** | Control de autenticación y autorización basada en JWT. | Garantiza acceso seguro y controlado. | Auth0 (JWKs) | Framework / Acelerador |
 | **spring-security-oauth2-jose** | Provee soporte criptográfico para la validación de tokens. | Garantiza autenticidad e integridad. | Spring Security | Librería |
@@ -125,9 +125,9 @@ Cada componente encapsula una responsabilidad específica, facilitando la manten
 
 ---
 
-## **2.3 Imagen del Diagrama de Componentes (Backend)**
+## **2.3 Imagen del Diagrama de Componentes - Backend**
 
-![Diagrama de componentes backend](DiagramaComponentesBackend.png)
+![Diagrama de componentes backend](<DiagramaComponentes Backend.png>)
 
 ---
 
@@ -136,16 +136,16 @@ Cada componente encapsula una responsabilidad específica, facilitando la manten
 | Componente | Descripción | Motivación / Justificación | Depende / Usa | Tipo de Componente |
 |-----------|-------------|----------------------------|---------------|-------------------|
 | **PathOrder FrontEnd SPA** | Aplicación web que maneja la UI, navegación, sesiones y consumo del backend. | Centraliza la experiencia del usuario y desacopla presentación del backend. | Vue 3.5.22, vue-router, auth0-vue, axios, tailwindcss | **Componente a Desarrollar (Core)** |
-| **Vue 3.5.22** | Framework reactivo basado en composición. | Productividad, rendimiento y modularidad. | - | Framework / Acelerador |
-| **vue-router 4.8.3** | Manejador de rutas y guards de navegación. | Control de flujo por roles y autenticación. | Vue 3 | Framework / Acelerador |
+| **Vue 3.5.22** | Framework reactivo basado en composición. | Productividad, rendimiento y modularidad. | - | Librería Externa |
+| **vue-router 4.8.3** | Manejador de rutas y guards de navegación. | Control de flujo por roles y autenticación. | Vue 3 | librería Externa |
 | **@auth0/auth0-vue** | SDK para autenticación y manejo de sesión. | Externaliza seguridad y simplifica integración con Auth0. | Auth0 (OIDC/JWT), vue-router | Integración / Servicio Externo |
-| **axios 1.12.2** | Cliente HTTP con interceptores. | Centraliza manejo de headers, tokens y errores. | auth0-vue, API Gateway | Librería |
-| **tailwindcss 4.1.14** | Framework utilitario CSS. | Consistencia visual, rapidez en maquetación y soporte dark mode. | - | Framework / Acelerador |
+| **axios 1.12.2** | Cliente HTTP con interceptores. | Centraliza manejo de headers, tokens y errores. | auth0-vue, API Gateway | Librería Externa |
+| **tailwindcss 4.1.14** | Framework utilitario CSS. | Consistencia visual, rapidez en maquetación y soporte dark mode. | - | Librería Externa |
 
 ---
 
-## **2.5 Imagen del Diagrama de Componentes (Frontend)**
-![Diagrama de componentes frontend](DiagramaComponentesFrontend.png)
+## **2.5 Imagen del Diagrama de Componentes - Frontend**
+![Diagrama de componentes frontend](<DiagramaComponentes frontend.png>)
 
 
 ---
