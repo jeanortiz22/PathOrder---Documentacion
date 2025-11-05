@@ -127,8 +127,7 @@ Cada componente encapsula una responsabilidad específica, facilitando la manten
 
 ## **2.3 Imagen del Diagrama de Componentes - Backend**
 
-![Diagrama de componentes backend](<DiagramaComponentes Backend.png>)
-
+![Diagrama de componentes backend](<sf2-Diagrama de componentes back end.drawio.png>)
 ---
 
 ## **2.4 Componentes del Frontend**
