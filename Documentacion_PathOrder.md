@@ -270,27 +270,36 @@ Modela la ejecución de una transacción general en el backend, mostrando cómo 
 | Acción | Origen | Destino | Descripción |
 |-------|--------|---------|-------------|
 | 1. `execute(JSON)` | Frontend | Controller | El cliente envía la solicitud en formato JSON. |
-| 2. `mapJsonToDTO(JSON)` | Controller | DTO | El controlador transforma la entrada en un DTO estándar. |
-| 3. `return DTO` | DTO | Controller | Se retorna el DTO listo para continuar el flujo. |
+| 2. `mapJsonToDTO(JSON)` | Controller | DTO | Se transforma la entrada a un DTO estándar. |
+| 3. `return DTO` | DTO | Controller | Se retorna el DTO para continuar el flujo. |
 | 4. `execute(DTO)` | Controller | Interactor | Se delega la ejecución con el DTO recibido. |
-| 5. `mapDTOToDomain(DTO)` | Interactor | Domain | El Interactor convierte el DTO a un objeto de dominio. |
+| 5. `mapDTOToDomain(DTO)` | Interactor | Domain | Se convierte el DTO a un objeto de dominio. |
 | 6. `return Domain` | Domain | Interactor | Se entrega el objeto de dominio preparado. |
-| 7. `execute(Domain)` | Interactor | Use Case | El Interactor invoca el caso de uso transaccional. |
-| 8. `execute(Data)` *(loop opcional)* | Use Case | Validator | Se validan reglas de negocio. Repite hasta cumplirse. |
-| 9. `return Result/VO` | Validator | Use Case | Se confirma cumplimiento o se detiene con excepción. |
-|10. `mapDomainToEntity(Domain)` | Use Case | Entity | Se convierte el dominio en una entidad persistible. |
-|11. `return Entity` | Entity | Use Case | Se retorna entidad lista para persistencia. |
-|12. `execute(Entity)` | Use Case | Repository | Se ejecuta acción CRUD en la fuente de datos. |
-|13. `return Data<Entity>` | Repository | Use Case | Se retorna resultado o confirmación. |
-|14. `mapVOToDTO(Data)` | Use Case / Interactor / Controller | DTO | Se transforma el resultado a DTO de salida. |
-|15. `return DTO` | Controller | Frontend | Se entrega la respuesta lista para visualización. |
-|16. `return JSON` | Frontend | Frontend | El cliente procesa la respuesta final. |
+| 7. `execute(Domain)` | Interactor | Use Case | Se invoca el caso de uso transaccional. |
+| 8. `validate(Data)` *(loop opcional)* | Use Case | Validator | Se aplican reglas de negocio del dominio. |
+| 9. `return OK / VO` | Validator | Use Case | Confirmación o excepción si no cumple reglas. |
+| 10. `mapDomainToEntity(Domain)` | Use Case | Entity | Se convierte el dominio en una entidad persistible. |
+| 11. `return Entity` | Entity | Use Case | Se retorna la entidad lista para persistencia. |
+| 12. `execute(Entity)` *(CRUD)* | Use Case | Repository | Se ejecuta la operación de acceso a datos. |
+| 13. `return result` | Repository | Use Case | Se recibe el resultado o confirmación del CRUD. |
+
+### **Variaciones según el Tipo de Operación**
+
+| Tipo de Operación | Acción | Origen | Destino | Resultado / Respuesta |
+|------------------|--------|--------|---------|----------------------|
+| **Query (GET)** | 14. `mapVOToDTO(result)` | Use Case / Interactor | DTO | Se transforma el resultado del dominio a un DTO de salida. |
+| **Query (GET)** | 15. `return DTO` | DTO | Controller | Se entrega el DTO resultante al cliente. |
+| **Query (GET)** | 16. `return respuesta` | Controller | Frontend | El cliente recibe y procesa la respuesta 200 OK + JSON. |
+| **Create (POST)** | 17. `return ID generado` | Use Case | Controller | Se confirma creación del recurso. |
+| **Create (POST)** | 18. `return respuesta` | Controller | Frontend | **201 Created** (+ DTO opcional) |
+| **Update / Delete (PUT / PATCH / DELETE)** | 19. `return confirmación` | Use Case | Controller | Se confirma éxito de la operación. |
+| **Update / Delete (PUT / PATCH / DELETE)** | 20. `return respuesta` | Controller | Frontend | **204 No Content** |
 
 ---
 
 ### **4.2.1 Imagen del Diagrama de Secuencias - Backend**
 
-![Diagrama de Secuencias - Backend](DiagramaSecuenciasBackend.png)
+![Diagrama de Secuencias - Backend](<sf2-Diagrama de secuencias back end.drawio.png>)
 
 ---
 
