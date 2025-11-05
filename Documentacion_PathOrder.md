@@ -186,7 +186,7 @@ El diagrama de paquetes describe la organización interna tanto del Backend como
 | `messages` | `repository` | Contrato para acceso a mensajes externos. | - |
 | `notifications` | `repository` | Contrato para servicio de notificaciones. | - |
 | `parameters` | `repository` | Contrato para parámetros del sistema. | - |
-| `specification` | `repository` | Reglas y consultas avanzadas para persistencia. | `domain` |
+| `specification` | `repository` | Reglas y consultas avanzadas para persistencia. | - |
 | `entity` | `pathorder` | Entidades lógicas del modelo transaccional. | `crosscutting` |
 | `transaction` | `entity` | Límites y contextos transaccionales. | - |
 | `application` | `transaction` | Coordinación de acciones bajo contexto transaccional. | `pathorder.application` |
