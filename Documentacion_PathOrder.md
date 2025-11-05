@@ -156,7 +156,7 @@ El diagrama de paquetes describe la organización interna tanto del Backend como
 
 ---
 
-## **3.2 Paquetes — Backend (PathOrder)**
+## **3.2 Paquetes — Backend **
 
 | Paquete | Paquete Padre | Descripción | Usa/Importa |
 |--------|----------------|-------------|-------------|
@@ -214,7 +214,7 @@ El diagrama de paquetes describe la organización interna tanto del Backend como
 
 ---
 
-## **3.4 Paquetes — Frontend (PathOrder Front)**
+## **3.4 Paquetes — Frontend**
 
 **Descripción:** Organización del código fuente del frontend siguiendo una estructura modular orientada a vistas, componentes reutilizables, servicios HTTP y utilidades de apoyo.
 
